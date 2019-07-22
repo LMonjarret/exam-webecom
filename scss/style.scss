@@ -1,0 +1,459 @@
+/********* VARIABLES *********/
+// Polices
+$principale : 'Archivo Black', sans-serif;
+$secondaire : 'Roboto', sans-serif;
+
+$police-titre : $principale;
+$police-btn : $principale;
+$police-texte : $secondaire;
+
+
+// Tailles de polices
+$taille-titre : 1.125rem;
+$taille-btn : 1.125rem;
+$taille-texte : 1rem;
+
+
+// Couleurs textes
+$couleur-titre : #227799;
+$couleur-btn : #fff;
+$couleur-texte : #333;
+
+
+// Background-color
+$bgColor-btn : #227799;
+$bgColor-btn-alt: #cc3d17;
+
+$bgColor-btn-hover : #50b9e4;
+$bgColor-btn-alt-hover : #ed7150;
+
+
+// Espacements
+$espacement-bloc : 3rem;
+$espacement-contenu : 1.5rem;
+
+
+/********* PLACEHOLDERS *********/
+%uppercase {
+    text-transform: uppercase;
+}
+
+%titre {
+    @extend %uppercase;
+    
+    color: $couleur-titre;
+    font-family: $police-titre;
+    font-size: $taille-titre;
+}
+
+%texte {
+    color: $couleur-texte;
+    font-family: $police-texte;
+    font-size: $taille-texte;
+}
+
+%nav-a {
+    @extend %uppercase;
+    
+    color: #fff;
+    font-family: $police-titre;
+    font-size: 1.125rem;
+    text-decoration: none;
+    transition: color 0.1s ease-in;
+    
+    &:hover {
+        color: $bgColor-btn-hover;
+    }
+}
+
+%btn {
+    @extend %uppercase;
+    
+    background-color: $bgColor-btn;
+    color: $couleur-btn;
+    font-family: $police-btn;
+    font-size: $taille-btn;
+    padding: 0.5rem 1rem;
+    
+    &:hover {
+        background-color: $bgColor-btn-hover;
+    }
+}
+
+%btn-alt {
+    @extend %uppercase;
+    
+    background-color: $bgColor-btn-alt;
+    color: $couleur-btn;
+    font-family: $police-btn;
+    font-size: $taille-btn;
+    
+    &:hover {
+        background-color: $bgColor-btn-alt-hover;
+    }
+}
+
+%container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+%espacement-bloc {
+    margin-bottom: $espacement-bloc;
+}
+
+%espacement-contenu {
+    margin-bottom: $espacement-contenu;
+}
+
+%flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+%large-6 {
+    width: 50%;
+}
+
+%justify-between {
+    justify-content: space-between;
+}
+
+%align-center {
+    align-items: center;
+}
+
+
+/********* REGLES CSS *********/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+// Règles pour le champs d'erreurs
+.error {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: red;
+    color: #fff;
+}
+
+body {
+    font-family: $police-texte;
+}
+
+// Règles concernant les titres
+h1, h2, h3, h4, h5, h6 {
+    @extend %espacement-contenu;
+    @extend %titre;
+}
+
+fieldset {
+    border: none;
+}
+
+form {
+    input {
+            @extend %espacement-contenu;
+
+            display: block;
+
+            &[type=submit] {
+                @extend %btn;
+
+                border: none;
+            }
+
+            &[type=radio] {
+                display: inline;
+            }
+        }
+}
+
+header {
+    @extend %align-center;
+    @extend %espacement-bloc;
+    @extend %flex;
+    @extend %justify-between;
+
+    background-color: $bgColor-btn;
+    
+    a {
+        @extend %nav-a;
+        
+        margin: $espacement-contenu;
+    }
+}
+
+main {
+    @extend %espacement-bloc;
+    @extend %container;
+    
+    p {
+        @extend %espacement-contenu;
+    }
+    
+    // Règle concernant la sélection des cinq fiches sur la page d'accueil
+    .dernieresFiches {
+        @extend %flex;
+        @extend %espacement-bloc;
+        @extend %justify-between;
+        
+        border: 1px solid black;
+        padding: 1rem;
+        
+        text-align: center;
+        
+        .fiche-accueil {
+            
+            p:first-of-type {
+                @extend %titre;
+            }
+            
+            a {
+                @extend %btn;
+                
+                text-decoration: none;
+            }
+        }
+    }
+    
+    // Règles concernant les étoiles de notation
+    .stars {
+        @extend %flex;
+        @extend %espacement-bloc;
+        
+        .star, .yellowStar {
+            display: block;
+            width: 32px;
+            height: 32px;
+            
+            margin-top: -1rem;
+            margin-right: 1rem;
+            
+            &:first-of-type {
+                margin-left: 1rem;
+            }
+        }
+        
+        .star {
+            background-image: url("../img/star.png");
+        }
+        
+        .yellowStar {
+            background-image: url("../img/yellowStar.png");
+        }
+    }
+    
+    // Règles concernant les tableaux
+    table {
+        border-collapse: collapse;
+        margin: 0 auto;
+        text-align: center;
+        
+        th {
+            background-color: $bgColor-btn;
+        }
+        
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        
+        td, th {
+            border: 1px solid #333;
+            padding: $espacement-contenu;
+        }
+        
+        tr td:last-of-type {
+            border: none;
+            background-color: #fff;
+        }
+    }
+    
+    // Règle concernant les favoris
+    .liked, .not-liked {
+        background-repeat: no-repeat;
+        width: 24px;
+        height: 24px;
+        margin: 0 1rem;
+    }
+    
+    .liked {
+        background-image: url("../img/liked.png");
+    }
+    
+    .not-liked {
+        background-image: url("../img/not-liked.png");
+    }
+    
+    // Règles pour le champs de recherche de la page d'accueil
+    .recherche {
+        
+        
+        p {
+            display: block;
+            width: 100%;
+            @extend %titre;
+        }
+        
+        form {
+            @extend %flex;
+            width: 100%;
+            
+            input[type=text] {
+                width: 40%;
+                height: 1.5rem;
+                margin-left: $espacement-contenu;
+            }
+
+            input[type=submit] {
+                margin-left: $espacement-contenu;
+            }
+        }
+    }
+    
+    // Règles concernant les formulaires de la page d'accueil
+    .form {
+        @extend %flex;
+        @extend %justify-between;
+        
+        .souscription {
+            @extend %large-6;
+        }
+        
+        .connexion {
+            @extend %large-6;
+        }
+        
+    }
+    
+    // Règles concernant les fiches de conseil
+    .fiche {
+        @extend %flex;
+        @extend %espacement-bloc;
+        
+        img {
+            display: block;
+            height: auto;
+            max-width: 50%;
+            
+            padding-right: 1rem;
+        }
+        
+        .contenu {
+            @extend %large-6;
+            
+            h1 {
+                margin-bottom: 0;
+            }
+            
+            .detail {
+                color: #666;
+                font-size: 0.825rem;
+                font-style: italic;
+            }
+            
+            .entete {
+                @extend %flex;
+                
+                width: 100%;
+            }
+        }
+    }
+    
+    .boutons {
+            @extend %espacement-bloc;
+            @extend %flex;
+            
+            a {
+                @extend %btn;
+                
+                text-decoration: none;
+            }
+        }
+    
+    // Règles concernant les formulaires de création de fiche
+    .form-fiche {
+        
+        input[type=text] {
+            width: 50%;
+        }
+        
+        label {
+            display: block;
+        }
+        
+        textarea {
+            @extend %espacement-contenu;
+            width: 70%;
+            height: 8rem;
+        }
+        
+    }
+    
+    // Régles concernant les commentaires
+    .commentaires {
+        
+        .createCommentaire {
+            
+            label {
+                display: block;
+            }
+            
+            textarea {
+                width: 100%;
+                height: 10rem;
+            }
+        }
+        
+        .commentaire {
+            
+            .auteur {
+                margin-bottom: 0;
+                color: #666;
+                font-size: 0.825rem;
+                font-style: italic;
+            }
+        }
+    }
+    
+    
+    // Bloc "créer une fiche" de l'accueil
+    .creer-fiche {
+        @extend %espacement-bloc;
+        
+        a {
+            @extend %btn;
+            text-decoration: none;
+        }
+    }
+    
+    .fiches-utilisateur {
+        @extend %flex;
+        @extend %espacement-bloc;
+        
+        .mes-fiches {
+            @extend %large-6;
+
+            a {
+                @extend %btn;
+                text-decoration: none;
+            }
+        }
+
+        .mes-favoris {
+            @extend %large-6;
+
+            a {
+                @extend %btn;
+                text-decoration: none;
+            }
+
+        }
+    }
+    
+    
+}

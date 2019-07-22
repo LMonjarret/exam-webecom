@@ -1,0 +1,174 @@
+/********* VARIABLES *********/
+/********* PLACEHOLDERS *********/
+h1, h2, h3, h4, h5, h6, main .dernieresFiches .fiche-accueil p:first-of-type, main .recherche p, header a, form input[type=submit], main .dernieresFiches .fiche-accueil a, main .boutons a, main .creer-fiche a, main .fiches-utilisateur .mes-fiches a, main .fiches-utilisateur .mes-favoris a {
+  text-transform: uppercase; }
+
+h1, h2, h3, h4, h5, h6, main .dernieresFiches .fiche-accueil p:first-of-type, main .recherche p {
+  color: #227799;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.125rem; }
+
+header a {
+  color: #fff;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.125rem;
+  text-decoration: none;
+  transition: color 0.1s ease-in; }
+  header a:hover {
+    color: #50b9e4; }
+
+form input[type=submit], main .dernieresFiches .fiche-accueil a, main .boutons a, main .creer-fiche a, main .fiches-utilisateur .mes-fiches a, main .fiches-utilisateur .mes-favoris a {
+  background-color: #227799;
+  color: #fff;
+  font-family: "Archivo Black", sans-serif;
+  font-size: 1.125rem;
+  padding: 0.5rem 1rem; }
+  form input[type=submit]:hover, main .dernieresFiches .fiche-accueil a:hover, main .boutons a:hover, main .creer-fiche a:hover, main .fiches-utilisateur .mes-fiches a:hover, main .fiches-utilisateur .mes-favoris a:hover {
+    background-color: #50b9e4; }
+
+main {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+header, main, main .dernieresFiches, main .stars, main .fiche, main .boutons, main .creer-fiche, main .fiches-utilisateur {
+  margin-bottom: 3rem; }
+
+h1, h2, h3, h4, h5, h6, form input, main p, main .form-fiche textarea {
+  margin-bottom: 1.5rem; }
+
+header, main .dernieresFiches, main .stars, main .recherche form, main .form, main .fiche, main .fiche .contenu .entete, main .boutons, main .fiches-utilisateur {
+  display: flex;
+  flex-wrap: wrap; }
+
+main .form .souscription, main .form .connexion, main .fiche .contenu, main .fiches-utilisateur .mes-fiches, main .fiches-utilisateur .mes-favoris {
+  width: 50%; }
+
+header, main .dernieresFiches, main .form {
+  justify-content: space-between; }
+
+header {
+  align-items: center; }
+
+/********* REGLES CSS *********/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.error {
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: red;
+  color: #fff; }
+
+body {
+  font-family: "Roboto", sans-serif; }
+
+fieldset {
+  border: none; }
+
+form input {
+  display: block; }
+  form input[type=submit] {
+    border: none; }
+  form input[type=radio] {
+    display: inline; }
+
+header {
+  background-color: #227799; }
+  header a {
+    margin: 1.5rem; }
+
+main .dernieresFiches {
+  border: 1px solid black;
+  padding: 1rem;
+  text-align: center; }
+  main .dernieresFiches .fiche-accueil a {
+    text-decoration: none; }
+main .stars .star, main .stars .yellowStar {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin-top: -1rem;
+  margin-right: 1rem; }
+  main .stars .star:first-of-type, main .stars .yellowStar:first-of-type {
+    margin-left: 1rem; }
+main .stars .star {
+  background-image: url("../img/star.png"); }
+main .stars .yellowStar {
+  background-image: url("../img/yellowStar.png"); }
+main table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  text-align: center; }
+  main table th {
+    background-color: #227799; }
+  main table tr:nth-child(odd) {
+    background-color: #f2f2f2; }
+  main table td, main table th {
+    border: 1px solid #333;
+    padding: 1.5rem; }
+  main table tr td:last-of-type {
+    border: none;
+    background-color: #fff; }
+main .liked, main .not-liked {
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 24px;
+  margin: 0 1rem; }
+main .liked {
+  background-image: url("../img/liked.png"); }
+main .not-liked {
+  background-image: url("../img/not-liked.png"); }
+main .recherche p {
+  display: block;
+  width: 100%; }
+main .recherche form {
+  width: 100%; }
+  main .recherche form input[type=text] {
+    width: 40%;
+    height: 1.5rem;
+    margin-left: 1.5rem; }
+  main .recherche form input[type=submit] {
+    margin-left: 1.5rem; }
+main .fiche img {
+  display: block;
+  height: auto;
+  max-width: 50%;
+  padding-right: 1rem; }
+main .fiche .contenu h1 {
+  margin-bottom: 0; }
+main .fiche .contenu .detail {
+  color: #666;
+  font-size: 0.825rem;
+  font-style: italic; }
+main .fiche .contenu .entete {
+  width: 100%; }
+main .boutons a {
+  text-decoration: none; }
+main .form-fiche input[type=text] {
+  width: 50%; }
+main .form-fiche label {
+  display: block; }
+main .form-fiche textarea {
+  width: 70%;
+  height: 8rem; }
+main .commentaires .createCommentaire label {
+  display: block; }
+main .commentaires .createCommentaire textarea {
+  width: 100%;
+  height: 10rem; }
+main .commentaires .commentaire .auteur {
+  margin-bottom: 0;
+  color: #666;
+  font-size: 0.825rem;
+  font-style: italic; }
+main .creer-fiche a {
+  text-decoration: none; }
+main .fiches-utilisateur .mes-fiches a {
+  text-decoration: none; }
+main .fiches-utilisateur .mes-favoris a {
+  text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */
