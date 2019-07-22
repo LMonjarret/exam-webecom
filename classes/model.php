@@ -94,7 +94,7 @@ class model {
         if (!isset(self::$bdd)) {
             
             try {
-                self::$bdd = new PDO("mysql:host=sqlprive-be24678-001.privatesql;dbname=montjarret;charset=UTF8", "montjarret", "Night42000");
+                self::$bdd = new PDO("mysql:host=;dbname=;charset=UTF8", "login", "password");
             } catch (Exception $ex) {
                 debug(get_class($this)."getBdd() : échec de la connexion à la base de données, message d'erreur : $ex");
             }
